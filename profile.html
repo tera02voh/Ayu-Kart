@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - AyuKart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-left"><a href="index.html" class="logo">🌿 AyuKart</a></div>
+            <div class="nav-center">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="dosha-quiz.html" class="nav-link">Dosha Quiz</a></li>
+                    <li><a href="blog.html" class="nav-link">Knowledge</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="wishlist.html" class="nav-icon"><i class="fas fa-heart"></i><span class="badge" id="wishlist-count">0</span></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-cart"></i><span class="badge" id="cart-count">0</span></a>
+                <a href="profile.html" class="nav-icon"><i class="fas fa-user"></i></a>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>My Dashboard</h1>
+            <p>Manage your wellness journey</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="dashboard-layout">
+                <aside class="profile-sidebar">
+                    <div class="profile-info">
+                        <div class="profile-avatar">👤</div>
+                        <h3 class="profile-name">John Doe</h3>
+                        <p class="profile-email">john@example.com</p>
+                    </div>
+                    <ul class="profile-menu">
+                        <li><a href="#" class="active"><i class="fas fa-th-large"></i> Dashboard</a></li>
+                        <li><a href="#"><i class="fas fa-box"></i> My Orders</a></li>
+                        <li><a href="wishlist.html"><i class="fas fa-heart"></i> Wishlist</a></li>
+                        <li><a href="dosha-result.html"><i class="fas fa-leaf"></i> My Dosha</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Addresses</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                        <li><a href="index.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </aside>
+                
+                <div class="dashboard-main">
+                    <h2>Recent Orders</h2>
+                    <div class="orders-grid">
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div>
+                                    <strong>Order #AYU123456789</strong>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Placed on March 15, 2024</p>
+                                </div>
+                                <span class="order-status delivered">Delivered</span>
+                            </div>
+                            <div class="order-items">
+                                <p>Ashwagandha Supreme Capsules × 1</p>
+                                <p>Turmeric Curcumin Complex × 1</p>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                                <strong>Total: ₹1,698</strong>
+                                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">View Details</button>
+                            </div>
+                        </div>
+
+                        <div class="order-card">
+                            <div class="order-header">
+                                <div>
+                                    <strong>Order #AYU123456788</strong>
+                                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Placed on March 10, 2024</p>
+                                </div>
+                                <span class="order-status shipped">Shipped</span>
+                            </div>
+                            <div class="order-items">
+                                <p>Bhringraj Hair Growth Oil × 1</p>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                                <strong>Total: ₹549</strong>
+                                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;">Track Order</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section"><h3>🌿 AyuKart</h3><p>Ancient Wellness, Modern Living</p></div>
+                <div class="footer-section"><h4>Shop</h4><ul><li><a href="shop.html">All Products</a></li></ul></div>
+                <div class="footer-section"><h4>Support</h4><ul><li><a href="contact.html">Contact</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 AyuKart. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
+</body>
+</html>

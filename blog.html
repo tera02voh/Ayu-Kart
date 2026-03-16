@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Center - AyuKart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-left"><a href="index.html" class="logo">🌿 AyuKart</a></div>
+            <div class="nav-center">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="dosha-quiz.html" class="nav-link">Dosha Quiz</a></li>
+                    <li><a href="blog.html" class="nav-link active">Knowledge</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="wishlist.html" class="nav-icon"><i class="fas fa-heart"></i><span class="badge" id="wishlist-count">0</span></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-cart"></i><span class="badge" id="cart-count">0</span></a>
+                <a href="profile.html" class="nav-icon"><i class="fas fa-user"></i></a>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Ayurvedic Knowledge Center</h1>
+            <p>Ancient wisdom for modern wellness</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="blog-grid" id="blog-grid"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section"><h3>🌿 AyuKart</h3><p>Ancient Wellness, Modern Living</p></div>
+                <div class="footer-section"><h4>Shop</h4><ul><li><a href="shop.html">All Products</a></li></ul></div>
+                <div class="footer-section"><h4>Support</h4><ul><li><a href="contact.html">Contact</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 AyuKart. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogGrid = document.getElementById('blog-grid');
+            blogGrid.innerHTML = blogArticles.map(article => `
+                <div class="blog-card" onclick="window.location.href='blog-article.html?id=${article.id}'">
+                    <div class="blog-image"><img src="${article.image}" alt="${article.title}"></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> ${article.date}</span>
+                            <span><i class="fas fa-user"></i> ${article.author}</span>
+                        </div>
+                        <h2 class="blog-title">${article.title}</h2>
+                        <p class="blog-excerpt">${article.excerpt}</p>
+                        <a href="blog-article.html?id=${article.id}" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            `).join('');
+        });
+    </script>
+</body>
+</html>

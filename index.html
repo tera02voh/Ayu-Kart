@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AyuKart - Ancient Wellness, Modern Living</title>
+    
+   
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+ 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    
+
+    <div id="loading-screen" class="loading-screen active">
+        <div class="loading-content">
+            <div class="logo-container">
+                <div class="ayukart-logo">🌿 AyuKart</div>
+                <div class="rotating-leaves">
+                    <div class="leaf leaf-vata">🍃</div>
+                    <div class="leaf leaf-pitta">🍃</div>
+                    <div class="leaf leaf-kapha">🍃</div>
+                </div>
+            </div>
+            <p class="loading-tagline">Ancient Wellness, Modern Living</p>
+            <div class="loading-bar-container">
+                <div class="loading-bar">
+                    <div class="vine-growth"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-left">
+                <a href="index.html" class="logo">🌿 AyuKart</a>
+            </div>
+            
+            <div class="nav-center">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="dosha-quiz.html" class="nav-link">Dosha Quiz</a></li>
+                    <li><a href="blog.html" class="nav-link">Knowledge</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-right">
+                <button class="nav-icon" id="search-icon" aria-label="Search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <a href="wishlist.html" class="nav-icon" aria-label="Wishlist">
+                    <i class="fas fa-heart"></i>
+                    <span class="badge" id="wishlist-count">0</span>
+                </a>
+                <a href="cart.html" class="nav-icon cart-icon" aria-label="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="badge" id="cart-count">0</span>
+                </a>
+                <a href="profile.html" class="nav-icon" aria-label="Account">
+                    <i class="fas fa-user"></i>
+                </a>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="search-modal" id="search-modal">
+        <div class="search-modal-content">
+            <button class="close-search" id="close-search">&times;</button>
+            <div class="search-container">
+                <input type="text" placeholder="Search for Ayurvedic products..." id="search-input">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+
+    
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="floating-leaves">
+                <span class="float-leaf">🍃</span>
+                <span class="float-leaf">🍃</span>
+                <span class="float-leaf">🍃</span>
+                <span class="float-leaf">🍃</span>
+                <span class="float-leaf">🍃</span>
+            </div>
+        </div>
+        <div class="container hero-content">
+            <h1 class="hero-title fade-up">Discover Your Ayurvedic Balance</h1>
+            <p class="hero-subtitle fade-up">Personalized wellness products based on your body type.</p>
+            <div class="hero-buttons fade-up">
+                <a href="dosha-quiz.html" class="btn btn-primary">Take Dosha Quiz</a>
+                <a href="shop.html" class="btn btn-secondary">Shop Ayurvedic Products</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+   
+    <section class="section featured-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore Our Collections</h2>
+                <p class="section-subtitle">Curated wellness products for modern living</p>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card" data-category="supplements">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=400" alt="Herbal Supplements">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-info">
+                        <h3>Herbal Supplements</h3>
+                        <a href="shop.html?category=supplements" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="oils">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400" alt="Ayurvedic Oils">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-info">
+                        <h3>Ayurvedic Oils</h3>
+                        <a href="shop.html?category=oils" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="skincare">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400" alt="Herbal Skincare">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-info">
+                        <h3>Herbal Skincare</h3>
+                        <a href="shop.html?category=skincare" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="haircare">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1522338242992-e1a54906a8da?w=400" alt="Natural Hair Care">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-info">
+                        <h3>Natural Hair Care</h3>
+                        <a href="shop.html?category=haircare" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="teas">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1594631661960-54087d4f0c7f?w=400" alt="Herbal Teas">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-info">
+                        <h3>Herbal Teas</h3>
+                        <a href="shop.html?category=teas" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="immunity">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1571249604447-c4d4e4396c70?w=400" alt="Immunity Boosters">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-info">
+                        <h3>Immunity Boosters</h3>
+                        <a href="shop.html?category=immunity" class="category-link">Explore <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="section dosha-education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Understand Your Dosha</h2>
+                <p class="section-subtitle">Discover the three fundamental energies of Ayurveda</p>
+            </div>
+            
+            <div class="dosha-cards">
+                <div class="dosha-card vata-card">
+                    <div class="dosha-icon">🌪️</div>
+                    <h3>Vata</h3>
+                    <p class="dosha-elements">Air + Ether</p>
+                    <ul class="dosha-traits">
+                        <li>Creative & Energetic</li>
+                        <li>Quick thinking</li>
+                        <li>Light body frame</li>
+                        <li>Dry skin tendency</li>
+                    </ul>
+                </div>
+                
+                <div class="dosha-card pitta-card">
+                    <div class="dosha-icon">🔥</div>
+                    <h3>Pitta</h3>
+                    <p class="dosha-elements">Fire + Water</p>
+                    <ul class="dosha-traits">
+                        <li>Strong digestion</li>
+                        <li>Warm body</li>
+                        <li>Intense focus</li>
+                        <li>Medium build</li>
+                    </ul>
+                </div>
+                
+                <div class="dosha-card kapha-card">
+                    <div class="dosha-icon">💧</div>
+                    <h3>Kapha</h3>
+                    <p class="dosha-elements">Earth + Water</p>
+                    <ul class="dosha-traits">
+                        <li>Calm & Grounded</li>
+                        <li>Strong endurance</li>
+                        <li>Stable build</li>
+                        <li>Smooth skin</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-cta">
+                <a href="dosha-quiz.html" class="btn btn-primary">Find Your Dosha</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="section featured-products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-subtitle">Handpicked wellness essentials</p>
+            </div>
+            
+            <div class="products-carousel" id="featured-carousel"></div>
+        </div> 
+    </section>
+
+    <section class="section seasonal-tips">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Seasonal Ayurveda Tips</h2>
+                <p class="section-subtitle">Align your wellness with nature's rhythms</p>
+            </div>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-icon">🌸</div>
+                    <h4>Spring Cleanse</h4>
+                    <p>Support natural detoxification with warming spices and lighter meals.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">☀️</div>
+                    <h4>Summer Cooling</h4>
+                    <p>Balance Pitta with cooling herbs, coconut, and sweet fruits.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">🍂</div>
+                    <h4>Autumn Grounding</h4>
+                    <p>Stabilize Vata with warm oils, cooked foods, and routine.</p>
+                </div>
+                
+                <div class="tip-card">
+                    <div class="tip-icon">❄️</div>
+                    <h4>Winter Nourishment</h4>
+                    <p>Build immunity with warming herbs, ghee, and restorative practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section customer-reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Real stories from real people</p>
+            </div>
+            
+            <div class="reviews-carousel" id="reviews-carousel">
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"AyuKart transformed my wellness journey. The dosha quiz helped me understand my body type, and the personalized product recommendations are spot-on!"</p>
+                    <div class="reviewer-info">
+                        <strong>Priya Sharma</strong>
+                        <span>Mumbai, India</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"The quality of products is exceptional. Natural, effective, and ethically sourced. My skin has never looked better!"</p>
+                    <div class="reviewer-info">
+                        <strong>Rajesh Kumar</strong>
+                        <span>Bangalore, India</span>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Fast delivery, beautiful packaging, and products that actually work. AyuKart is my go-to for authentic Ayurvedic wellness."</p>
+                    <div class="reviewer-info">
+                        <strong>Ananya Desai</strong>
+                        <span>Delhi, India</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="section newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Join Our Wellness Community</h2>
+                    <p>Subscribe for exclusive offers, Ayurvedic tips, and seasonal wellness guides</p>
+                </div>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+   
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🌿 AyuKart</h3>
+                    <p>Ancient Wellness, Modern Living</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="shop.html?category=supplements">Herbal Supplements</a></li>
+                        <li><a href="shop.html?category=oils">Ayurvedic Oils</a></li>
+                        <li><a href="shop.html?category=skincare">Skincare</a></li>
+                        <li><a href="shop.html?category=teas">Herbal Teas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Shipping & Returns</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>About AyuKart</h4>
+                    <ul>
+                        <li><a href="about.html">Our Story</a></li>
+                        <li><a href="blog.html">Knowledge Center</a></li>
+                        <li><a href="dosha-quiz.html">Dosha Quiz</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Ayurveda 101</a></li>
+                        <li><a href="#">Recipes</a></li>
+                        <li><a href="#">Wellness Tips</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 AyuKart. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

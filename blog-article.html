@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - AyuKart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-left"><a href="index.html" class="logo">🌿 AyuKart</a></div>
+            <div class="nav-center">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="dosha-quiz.html" class="nav-link">Dosha Quiz</a></li>
+                    <li><a href="blog.html" class="nav-link active">Knowledge</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="wishlist.html" class="nav-icon"><i class="fas fa-heart"></i><span class="badge" id="wishlist-count">0</span></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-cart"></i><span class="badge" id="cart-count">0</span></a>
+                <a href="profile.html" class="nav-icon"><i class="fas fa-user"></i></a>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <div class="article-layout">
+                <article class="article-content">
+                    <div class="article-header">
+                        <img class="article-image" id="article-image" src="" alt="">
+                        <div style="margin-top: 2rem;">
+                            <div class="blog-meta" id="article-meta"></div>
+                            <h1 id="article-title"></h1>
+                        </div>
+                    </div>
+                    <div class="article-body" id="article-body"></div>
+                </article>
+                
+                <aside class="article-sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Related Articles</h3>
+                        <div id="related-articles"></div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Recommended Products</h3>
+                        <div id="recommended-products"></div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section"><h3>🌿 AyuKart</h3><p>Ancient Wellness, Modern Living</p></div>
+                <div class="footer-section"><h4>Shop</h4><ul><li><a href="shop.html">All Products</a></li></ul></div>
+                <div class="footer-section"><h4>Support</h4><ul><li><a href="contact.html">Contact</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 AyuKart. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const articleId = parseInt(URLUtils.getParam('id'));
+            if (!articleId) {
+                window.location.href = 'blog.html';
+                return;
+            }
+            
+            const article = blogArticles.find(a => a.id === articleId);
+            if (!article) {
+                window.location.href = 'blog.html';
+                return;
+            }
+            
+            document.getElementById('article-image').src = article.image;
+            document.getElementById('article-image').alt = article.title;
+            document.getElementById('article-meta').innerHTML = `
+                <span><i class="fas fa-calendar"></i> ${article.date}</span>
+                <span><i class="fas fa-user"></i> ${article.author}</span>
+            `;
+            document.getElementById('article-title').textContent = article.title;
+            document.getElementById('article-body').innerHTML = article.content;
+            
+      
+            const relatedArticles = blogArticles.filter(a => a.id !== articleId).slice(0, 3);
+            document.getElementById('related-articles').innerHTML = relatedArticles.map(a => `
+                <div class="related-article" onclick="window.location.href='blog-article.html?id=${a.id}'">
+                    <div class="related-article-image"><img src="${a.image}" alt="${a.title}"></div>
+                    <div>
+                        <div class="related-article-title">${a.title}</div>
+                        <p style="color: var(--text-secondary); font-size: 0.85rem;">${a.date}</p>
+                    </div>
+                </div>
+            `).join('');
+            
+
+            const recommendedProducts = productsData.slice(0, 2);
+            document.getElementById('recommended-products').innerHTML = recommendedProducts.map(p => `
+                <div class="related-article" onclick="window.location.href='product-detail.html?id=${p.id}'">
+                    <div class="related-article-image"><img src="${p.image}" alt="${p.name}"></div>
+                    <div>
+                        <div class="related-article-title">${p.name}</div>
+                        <p style="color: var(--primary-green); font-weight: 600;">${ProductUtils.formatPrice(p.price)}</p>
+                    </div>
+                </div>
+            `).join('');
+        });
+    </script>
+</body>
+</html>

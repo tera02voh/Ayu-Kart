@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Success - AyuKart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pages.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-left"><a href="index.html" class="logo">🌿 AyuKart</a></div>
+            <div class="nav-center">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="shop.html" class="nav-link">Shop</a></li>
+                    <li><a href="dosha-quiz.html" class="nav-link">Dosha Quiz</a></li>
+                    <li><a href="blog.html" class="nav-link">Knowledge</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <a href="wishlist.html" class="nav-icon"><i class="fas fa-heart"></i><span class="badge" id="wishlist-count">0</span></a>
+                <a href="cart.html" class="nav-icon"><i class="fas fa-shopping-cart"></i><span class="badge" id="cart-count">0</span></a>
+                <a href="profile.html" class="nav-icon"><i class="fas fa-user"></i></a>
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section order-success-section">
+        <div class="container">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            
+            <div class="success-content">
+                <h1>Order Confirmed!</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary);">Your wellness journey continues...</p>
+            </div>
+            
+            <div class="order-details">
+                <p class="order-id">Order ID: <span id="order-id-display">Loading...</span></p>
+                <p><strong>Estimated Delivery:</strong> 3-5 business days</p>
+                <p>We've sent a confirmation email with order details.</p>
+            </div>
+            
+            <div class="leaf-animation" style="text-align: center; font-size: 3rem; margin: 2rem 0;">
+                🌿 🍃 🌿
+            </div>
+            
+            <div class="success-actions">
+                <a href="profile.html" class="btn btn-primary">
+                    <i class="fas fa-box"></i> Track Order
+                </a>
+                <a href="shop.html" class="btn btn-secondary">
+                    <i class="fas fa-shopping-bag"></i> Continue Shopping
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section"><h3>🌿 AyuKart</h3><p>Ancient Wellness, Modern Living</p></div>
+                <div class="footer-section"><h4>Shop</h4><ul><li><a href="shop.html">All Products</a></li></ul></div>
+                <div class="footer-section"><h4>Support</h4><ul><li><a href="contact.html">Contact</a></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 AyuKart. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="utils.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const orderId = URLUtils.getParam('order');
+            if (orderId) {
+                document.getElementById('order-id-display').textContent = orderId;
+            }
+        });
+    </script>
+</body>
+</html>
